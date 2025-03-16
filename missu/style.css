@@ -1,0 +1,123 @@
+/* Reset all padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body setup to center the content */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f5f5, #f9f9f9); /* Subtle gradient background */
+    overflow: hidden; /* Prevent scrolling */
+    text-align: center;
+}
+
+/* Heading styling */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #3b3b3b;
+    margin-bottom: 30px; /* Space between the heading and the puzzle */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a soft shadow for better readability */
+}
+
+/* Container for the whole game */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px; /* Set the width of the entire puzzle grid */
+    height: 600px; /* Set the height to match the grid size */
+    background-color: #fff;
+    border-radius: 15px; /* Rounded corners for the container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
+}
+
+/* The 3x3 grid layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(3, 1fr);  /* 3 equal rows */
+    grid-gap: 0; /* Remove any space between grid items */
+    width: 100%;
+    height: 100%;
+}
+
+/* Puzzle Item: each individual puzzle piece */
+.puzzle-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensure that nothing overflows the grid cell */
+    border-radius: 10px; /* Round corners of puzzle pieces */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add soft shadow around puzzle pieces */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for puzzle pieces */
+.puzzle-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the puzzle piece on hover */
+}
+
+/* Cover overlay that hides the image */
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    cursor: pointer;
+    border-radius: 10px; /* Round the cover corners to match puzzle pieces */
+}
+
+/* The question modal when the cover is clicked */
+.question-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    display: none;
+}
+
+/* Hidden image that will be shown when confirmed */
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+/* Button styles */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition for button hover */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Add some padding to the body content */
+body {
+    padding: 20px;
+}
